@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript</title>
+</head>
+<body>
+
+<h1>onKeyUp</h1>
+
+<input type='text' id='inputan' onKeyUp='tulis()'>
+
+<p id='result' style="color:red;"></p>
+
+<script type="text/javascript">
+	
+var tulis = function() {
+	var content = document.getElementById('inputan').value;
+	document.getElementById('result').innerHTML = content;
+}
+
+</script>
+
+</body>
+</html>

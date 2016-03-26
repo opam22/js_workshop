@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript</title>
+</head>
+<body>
+
+<h1>onMouseOver n onMouseOut</h1>
+
+<h1>Arahkan kursor ke gambar untuk melihat siapa dia sebenarnya</h1>
+
+<img id='gambar' src='zzz.jpg' width='200' height='200' onMouseOver='whoIsShe()' onMouseOut="turnBackHer()">
+
+
+<h1 id='result' style="color:red;"></h1>
+
+<script type="text/javascript">
+	
+var whoIsShe = function() {
+	document.getElementById('gambar').src = 'tatjana.jpg';
+	document.getElementById('gambar').width = '500';
+	document.getElementById('gambar').height = '500';
+}
+
+var turnBackHer = function() {
+	document.getElementById('gambar').src = 'zzz.jpg';
+	document.getElementById('gambar').width = '200';
+	document.getElementById('gambar').height = '200';
+}
+
+</script>
+
+</body>
+</html>

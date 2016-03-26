@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>WhatsApp</title>
+</head>
+<body>
+
+<input type='text' id='chat-box' onKeyUp='typing()'>
+<button id='send-button' onClick='send()'>Send</button>
+
+<br>
+
+<p id='lagi-nulis' style='color:red;'></p>
+
+<div id='chat-content'></div>
+
+
+
+<script type="text/javascript">
+	
+var typing = function() {
+
+	var message = document.getElementById('chat-box').value;
+
+	if (message == 0) {
+		document.getElementById('lagi-nulis').innerHTML = '';
+	} else {
+		
+		document.getElementById('lagi-nulis').innerHTML = 'Someone is typing...';
+	}
+
+	
+}
+
+var send = function() {
+	var contentMessage = document.getElementById('chat-box').value;
+
+	document.getElementById('chat-content').innerHTML += '<p>' + contentMessage + '</p>';
+
+	document.getElementById('chat-box').value = '';
+
+	document.getElementById('lagi-nulis').innerHTML = '';
+}
+
+
+</script>
+	
+</body>
+</html>

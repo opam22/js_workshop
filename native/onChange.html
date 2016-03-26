@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript</title>
+</head>
+<body>
+
+<h1>onChange</h1>
+
+<h1>Pilihlah satu pria paling macho di HIMIFDA</h1>
+
+<select id='man' onChange='choosen()'>
+	<option value="Bang Dalsim">Bang Dalsim
+	<option value="Bang Oblak">Bang Oblak
+	<option value="Bang Ramwa">Bang Ramwa
+	<option value="Bang Jambul">Bang Jambul
+	<option value="Bang Andrea">Bang Andrea
+</select>
+
+<p id='result'></p>
+
+<script type="text/javascript">
+	
+var choosen = function() {
+	var theMan = document.getElementById('man').value;
+
+	document.getElementById('result').innerHTML = 'Kamu Memilih: ' + theMan;
+}
+
+</script>
+
+</body>
+</html>

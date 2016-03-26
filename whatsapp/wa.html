@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript</title>
+</head>
+<body>
+
+
+	<h1>Chatting Application</h1>
+
+	<input type="text" class="input-text" onKeyUp="tulis()"><button onclick="kirim(bersihkan)">Send</button>
+	<p id="typing" style="background-color: red"></p>
+	<hr>
+	<div id="hasil"></div>
+	
+
+<script type="text/javascript">
+
+
+	//ini fungsi untuk membuat pemberitahuan kalau user sedang typing
+	var tulis = function(){
+		var hasil = document.getElementsByClassName('input-text')[0].value;
+
+		if (hasil == '') {
+			document.getElementById('typing').innerHTML = '';
+		} else {
+			document.getElementById('typing').innerHTML = 'Someone is typing...';
+		}
+		
+	}
+
+	var kirim = function(bersihkan){
+		var hasil = document.getElementsByClassName('input-text')[0].value;
+
+		bersihkan();
+
+		document.getElementById('typing').innerHTML = '';
+
+		
+
+		document.getElementById('hasil').innerHTML += '<p>' + hasil + '</p>';
+	}
+
+	var bersihkan = function(){
+		document.getElementsByClassName('input-text')[0].value = '';
+	}
+
+
+</script>
+</body>
+</html>
