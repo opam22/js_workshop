@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS ONCHANGE</title>
+</head>
+<body>
+
+<h1>Pilihlah abang-abangan paling macho</h1>
+<select id="abang" onChange="udahMilih()">
+	<option value="Bang Oblak">Bang Oblak
+	<option value="Bang Ramwa">Bang Ramwa
+	<option value="Bang Andrea">Bang Andrea
+</select>
+
+<h2>Pilihan :</h2>
+<p id="pilihan-saya"></p>
+
+<script type="text/javascript">
+	var udahMilih = function() {
+
+		//kita ambil value dari select
+		var pilihan = document.getElementById('abang').value;
+		
+		//kita munculkan ke element yang mau kita tuju
+		document.getElementById('pilihan-saya').innerHTML = pilihan;
+	}
+</script>
+
+
+</body>
+</html>

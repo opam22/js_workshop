@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS ONKEYUP</title>
+</head>
+<body>
+
+<input type="text" id="message" onKeyUp="jiplak()">
+<p id="jiplakan"></p>
+
+
+<script type="text/javascript">
+
+var jiplak = function() {
+	var inputan = document.getElementById('message').value;
+
+	document.getElementById('jiplakan').innerHTML = inputan;
+}
+
+</script>
+
+
+</body>
+</html>

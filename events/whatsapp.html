@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Whatsapp</title>
+</head>
+<body>
+	<input type="text" id="message-box" onkeyup="typing()">
+	<button onClick="send()">SEND</button>
+
+	<br>
+	
+	<p style="color:red" id="typing-message"></p>
+
+	<div id="message-content">
+		
+	</div>
+
+
+<script type="text/javascript">
+	
+var typing = function() {
+
+	var message = document.getElementById('message-box').value;
+
+	if (message == 0) {
+		document.getElementById('typing-message').innerHTML = '';
+	} else {
+		document.getElementById('typing-message').innerHTML = 'Someone is typing...';
+	}
+
+		
+}
+
+var send = function() {
+	var inputan = document.getElementById('message-box').value;
+
+	document.getElementById('message-content').innerHTML += '<p>' + inputan + '</p>';
+
+	document.getElementById('message-box').value = '';
+
+	document.getElementById('typing-message').innerHTML = '';
+
+}
+
+</script>
+
+</body>
+</html>

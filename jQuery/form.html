@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Form Validation</title>
+</head>
+<body>
+
+<h1>Form Validation with jQuery</h1>
+
+<form>
+	<input type="text" name="nama" placeholder="nama" id="input-nama" onKeyUp="validateForm()"><p style="color:red;" id="warning-nama"></p><br>
+	<input type="text" name="email" placeholder="email@email.com" id="input-email" onKeyUp="validateForm()"><p style="color:red;" id="warning-email"></p><br>
+	<textarea name="pesan" id="input-pesan" onKeyUp="validateForm()"></textarea><p id="emptyMessage" style="color:red;"></p><br>
+	<input type="submit" id="submit" disabled>
+</form>
+
+
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+
+
+	var validateForm = function() {
+		var namaLength = $('#input-nama').val().length;
+
+		if (namaLength < 8) {
+			$('#warning-nama').html('Nama harus lebih dari 8 karakter');
+			var validateNamaSuccess = 0;
+		} else {
+			$('#warning-nama').html('');
+			var validateNamaSuccess = 1;
+		}
+
+		var inputEmail = $('#input-email').val();
+
+		if( !validateEmail(inputEmail)) {
+			$('#warning-email').html('Please input the correct email format');
+			var validateEmailSuccess = 0;
+		} else {
+			$('#warning-email').html('');
+			var validateEmailSuccess = 1;
+		}
+
+		var pesanLength = $('#input-pesan').val().length;
+
+
+		if (pesanLength == 0) {
+			$('#emptyMessage').html('Pesan tidak boleh kosong.');
+			$('#submit').attr('disabled');
+		} else {
+			$('#emptyMessage').html('');
+			var validatePesanSuccess = 1;
+		}
+
+		if (validateNamaSuccess == 1 && validateEmailSuccess == 1 && validatePesanSuccess == 1) {
+			 $('#submit').removeAttr('disabled');
+		} else if (validateNamaSuccess == 0 || validateEmailSuccess == 0 || validatePesanSuccess == 0){
+			$('#submit').attr('disabled', true);
+		}
+		
+	}
+
+	var validateEmail = function(email) {
+		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+		return emailReg.test( email );
+	}
+
+
+
+</script>
+	
+</body>
+</html>

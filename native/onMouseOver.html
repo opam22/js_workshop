@@ -10,13 +10,11 @@
 
 <h1>Arahkan kursor ke gambar untuk melihat siapa dia sebenarnya</h1>
 
-<img id='gambar' src='zzz.jpg' width='200' height='200' onMouseOver='whoIsShe()' onMouseOut="turnBackHer()">
+<img id='gambar' src='zzz.jpg' width='200' height='200' onMouseOver="whoIsShe()" onMouseOut="turnBackHer()">
 
-
-<h1 id='result' style="color:red;"></h1>
 
 <script type="text/javascript">
-	
+
 var whoIsShe = function() {
 	document.getElementById('gambar').src = 'tatjana.jpg';
 	document.getElementById('gambar').width = '500';
